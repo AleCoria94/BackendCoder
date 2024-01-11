@@ -97,7 +97,7 @@ class ProductManager {
 }
 
 // Ejemplo de uso
-const productManager = new ProductManager();
+/*const productManager = new ProductManager();
 
 const test =async()=>{
     await productManager.addProduct({title:'heladera',description:'Esto es una heladera',price:1999999,thumbnail:'ruta',code:'0001',stock:15})
@@ -109,4 +109,6 @@ const test =async()=>{
     console.log('Esto es la eliminacion del id: 1 ',await productManager.deleteById(1));
     console.log('Lista de productos. Tercer intento',await productManager.getProducts());
     }
-    test();
+    test();*/
+
+    module.exports = new ProductManager();
