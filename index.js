@@ -10,14 +10,14 @@ class ProductManager {
 
     async addProduct(product) {
         try{
-            if(!this.isProductValid(product)){
+          /*  if(!this.isProductValid(product)){
                 console.log("Por favor, complete todos los datos")
             return
             }
             if(this.isCodeDuplicated(product.code)){
                 console.log("Error. Ya está duplicado el codigo", product.code, ". Por favor, ingrese otro codigo")
             return
-            }
+            }*/
             const products = await this.getProducts();
 
             const newProduct = {id:this.newId,...product}
@@ -48,11 +48,9 @@ class ProductManager {
                     if(product){
                     return product
                             } else{
-                            
                                 console.log("Producto no encontrado")
                                 }   
-                            }
-            catch(error){
+            }catch(error){
                     console.log(error)
                         }
         }
@@ -65,7 +63,8 @@ class ProductManager {
                 console.log('Producto no encontrado con id', id);
                 return;
               } 
-    
+              products[indice-1]= {id,updatedproduct}
+              await fs.promises.writeFile(this.path,JSON.stringify(products))
             }catch(error){
                 console.log(error)
             }
@@ -85,6 +84,8 @@ class ProductManager {
             product.title &&
             product.description &&
             product.price &&
+            product.status === true &&
+            product.category &&
             product.thumbnail &&
             product.code &&
             product.stock !== undefined
