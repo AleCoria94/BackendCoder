@@ -1,5 +1,5 @@
-const fs= require('fs')
-const { stringify } = require('querystring')
+import fs from 'fs'
+import { stringify } from 'querystring'
 
 class CartManager {
     constructor() {
@@ -70,4 +70,4 @@ class CartManager {
 
 }
 
-module.exports = new CartManager();
+export default new CartManager();

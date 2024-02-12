@@ -1,7 +1,7 @@
-const express = require("express")
+import express from "express"
 const router = express.Router()
 
-const ProductManager = require ('../index.js')
+import ProductManager from '../index.js'
 const products = await ProductManager.getProducts()
 
 router.get('/',(req,res)=>{
@@ -10,6 +10,10 @@ router.get('/',(req,res)=>{
 
 router.get('/realTimeProducts',(req,res)=>{
     res.render('realTimeProducts',{products});
+})
+
+router.get('/socket',(req,res)=>{
+    res.render('socket');
 })
 
 export default router;

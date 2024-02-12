@@ -1,6 +1,6 @@
-const express = require("express")
+import express from "express"
 const router = express.Router()
-const CartManager = require ('../carts.js')
+import CartManager from '../carts.js'
 
 router.get("/",async(req,res)=>{
     try{
@@ -47,4 +47,4 @@ router.get('/:cid',async(req,res)=>{
     }
 
 })
-module.exports = router;
+export default router

@@ -1,6 +1,7 @@
-const express = require("express")
+import express from 'express'
 const router = express.Router()
-const ProductManager = require ('../index.js')
+
+import ProductManager from '../index.js'
 
 router.get("/",async(req,res)=>{
     const {limit} = req.query
@@ -80,4 +81,4 @@ router.delete('/:pid',async(req,res)=>{
                 res.status(500).json({message:"error",error})
             }
         })
-module.exports = router;
+export default router

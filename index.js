@@ -1,5 +1,5 @@
-const fs= require('fs')
-const { stringify } = require('querystring')
+import fs from'fs'
+import { stringify } from 'querystring'
 
 class ProductManager {
     constructor() {
@@ -112,4 +112,4 @@ const test =async()=>{
     }
     test();*/
 
-    module.exports = new ProductManager();
+   export default new ProductManager();
