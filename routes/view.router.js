@@ -12,8 +12,8 @@ router.get('/realTimeProducts',(req,res)=>{
     res.render('realTimeProducts',{products});
 })
 
-router.get('/socket',(req,res)=>{
-    res.render('socket');
+router.get('/sockets',(req,res)=>{
+    res.render('sockets');
 })
 
 export default router;
