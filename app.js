@@ -44,6 +44,13 @@ io.on('connection', (socket) => {
       io.emit('loadProducts',prod)
     }
     emitProducts();
+    socket.on('newProduct',async (data) =>{
+      const newProduct = new Products(data)
+      const saveProduct = await newProduct.save()
+
+      console.log("esto es data",data);
+      console.log("esto es saveProduct",saveProduct);
+    })
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });

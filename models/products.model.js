@@ -9,7 +9,7 @@ const productsSchema = new Schema({
     description: {
         type: String, 
         required:true
-    },
+    }/*,
     price: {
         type: Number, 
         required:true
@@ -29,6 +29,6 @@ const productsSchema = new Schema({
     {
     timestamps:true
     
-})
+    */})
 
 export default model("Products",productsSchema)
